@@ -409,21 +409,41 @@
             { "title": "【2020】ぽこピーからの重大発表！！！", "video": "https://www.youtube.com/watch?v=fZXwH0lf6EI", "image": "https://i.ytimg.com/vi/fZXwH0lf6EI/hqdefault.jpg" },
         ]
 
+        // NOTE: when the parsers browsers have reach here, 
+        // #cards, #vidcount are already parsed and mounted on document tree.
+        // so we don't have to use onload event or something like that.
+
+        // generate and append card elements into #cards
         const cards = document.getElementById("cards")
         data.forEach((record) => {
             const card = createCardComponent(record.title, record.image, record.video)
             cards.appendChild(card)
         })
 
+        // insert textContent in #vidcount
         const counter = document.getElementById("vidcount")
         counter.textContent = data.length
 
+        // Easter egg
+        const peanutsKunColor = "#c39e15"
+        const ponpokoSanColor = "#79a755"
+
+        console.log("Hello %cSatonotami%c and %cOtomonuts%c! 😎", `color: ${ponpokoSanColor}; font-weight: bold; font-size: 18px`, "", `color: ${peanutsKunColor}; font-weight: bold; font-size: 18px`, "")
+        console.log("Please enjoy happy year-end and pokopea best vid award in 2020!")
+        console.log("%cPonpoko channel%c is: \n👉 https://www.youtube.com/channel/UC1EB8moGYdkoZQfWHjh7Ivw/featured", `color: ${ponpokoSanColor}; font-weight: bold; font-size: 18px`, "")
+        console.log("%cPeanuts kun channel%c is: \n👉 https://www.youtube.com/channel/UCmgWMQkenFc72QnYkdxdoKA", `color: ${peanutsKunColor}; font-weight: bold; font-size: 18px`, "")
 
         /*
-        <a class="card" href="https://www.youtube.com/watch?v=JE7NILL0aCk" target="_blank">
-            <div class="img" background="https://i.ytimg.com/vi/JE7NILL0aCk/hqdefault.jp"></div>
-            <span class="title">【デブ活】500円でより多くのカロリーを摂取しろ！！コスパ飯選手権！</span>
-        </a>
+        createCardComponent generate anchor element which is a card containing one video's title/url/thumbnail in it.
+        the element looks like below: 
+            <a class="card" href="https://www.youtube.com/watch?v=JE7NILL0aCk" target="_blank">
+                <div class="img" background="https://i.ytimg.com/vi/JE7NILL0aCk/hqdefault.jp"></div>
+                <span class="title">【デブ活】500円でより多くのカロリーを摂取しろ！！コスパ飯選手権！</span>
+            </a>
+        @param {string} title
+        @param {string} thumbnailUrl
+        @param {string} videoUrl
+        @return {HTMLAnchorElement} card
         */
         function createCardComponent(title, thumbnailUrl, videoUrl) {
             const card = document.createElement("a")
