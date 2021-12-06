@@ -1,0 +1,95 @@
+* {
+	box-sizing: border-box;
+	color: #252525;
+}
+
+body {
+	font-family: "Helvetica Neue",
+		Arial,
+		"Hiragino Kaku Gothic ProN",
+		"Hiragino Sans",
+		Meiryo,
+		sans-serif;
+}
+
+h1 {
+	margin: 42px 0;
+	text-align: center;
+	font-size: 2.4rem
+}
+
+p {
+	margin: 0 0 12px 0;
+}
+
+a:not(.card) {
+	font-weight: bold;
+}
+
+.description {
+	background: #f5f4fb;
+	padding: 16px;
+	border-radius: 8px;
+}
+
+.small {
+	font-size: 0.8rem;
+	margin: 0;
+}
+
+.cards {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: start;
+	margin-top: 64px;
+}
+
+.cards .card {
+	flex: 1;
+	min-width: 32%;
+	max-width: 32%;
+	border: 1px solid #e6e6e6;
+	padding: 12px;
+	border-radius: 8px;
+	display: flex;
+	flex-direction: column;
+	min-height: 100px;
+	margin-bottom: 15px;
+	overflow: hidden;
+	text-decoration: none;
+	color: #252525;
+}
+
+.cards .card:hover {
+	transform: scale(1.05);
+	transition: all 0.4s;
+}
+
+@media(max-width: 720px) {
+	.cards .card {
+		min-width: 45%;
+		max-width: 45%;
+	}
+}
+
+@media(max-width: 460px) {
+	.cards .card {
+		min-width: 100%;
+		max-width: 100%;
+	}
+}
+
+
+.container {
+	max-width: 800px;
+	padding: 24px;
+	margin: 0 auto;
+}
+
+.card .img {
+	margin: -12px;
+	width: calc(100% +24px);
+	margin-bottom: 12px;
+	padding-top: 75%;
+}
