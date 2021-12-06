@@ -26,6 +26,10 @@ a:not(.card) {
 	font-weight: bold;
 }
 
+.spacer {
+	padding: 16px 0;
+}
+
 .description {
 	background: #f5f4fb;
 	padding: 16px;
@@ -59,6 +63,10 @@ a:not(.card) {
 	overflow: hidden;
 	text-decoration: none;
 	color: #252525;
+}
+
+.card.dummy {
+	border: none;
 }
 
 .cards .card:hover {
