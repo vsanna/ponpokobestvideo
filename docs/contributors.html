@@ -168,9 +168,15 @@
             .then(data => {
                 const contributorsMap = {}
 
-                // unique
+                // merge
                 data.flat().forEach((contributor) => {
-                    contributorsMap[contributor.id] = contributor
+                    contributorsMap[contributor.id] = {
+                        ...contributor,
+                        contributions: (contributorsMap[contributor.id]
+                                            ? contributorsMap[contributor.id].contributions
+                                            : 0)
+                                        + contributor.contributions
+                    }
                 })
                 const contributors = Object.values(contributorsMap)
 
@@ -181,7 +187,7 @@
                     contributorsSection.appendChild(comp)
                 })
 
-                let numInRow
+                let numInRow = 0
 
                 if (window.innerWidth < 460) {
                     numInRow = 2
