@@ -1,6 +1,6 @@
 ## what is this?
 This is this 😎
-https://vsanna.github.io/ponpoko2020bestvids/
+https://vsanna.github.io/ponpokobestvideo/
 
 ## how to contribute
 Please open an issue first and open your PR if you have any good idea :)
