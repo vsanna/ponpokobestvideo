@@ -80,19 +80,24 @@ function showEasterEgg(year) {
         @return {HTMLAnchorElement} card
         */
 function createCardComponent(title, thumbnailUrl, videoUrl) {
-  const card = document.createElement("a");
+  const card = document.createElement("div");
   card.classList.add("card");
-  card.href = videoUrl;
-  card.target = "_blank";
+
+  const aTag = document.createElement("a");
+  aTag.href = videoUrl;
+  aTag.target = "_blank";
 
   const img = document.createElement("div");
   img.classList.add("img");
   img.style.background = `url(${thumbnailUrl}) center/cover`;
 
+  aTag.appendChild(img);
+
   const vidTitle = document.createElement("span");
   vidTitle.classList.add("title");
   vidTitle.textContent = title;
-  card.appendChild(img);
+
+  card.appendChild(aTag);
   card.appendChild(vidTitle);
 
   return card;

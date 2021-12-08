@@ -69,7 +69,7 @@ a:not(.card) {
 	border: none;
 }
 
-.cards .card:hover {
+.cards .card .img:hover {
 	transform: scale(1.05);
 	transition: all 0.4s;
 }
