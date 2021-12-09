@@ -101,3 +101,27 @@ a:not(.card) {
 	margin-bottom: 12px;
 	padding-top: 75%;
 }
+
+.card .title{
+	cursor:pointer;
+}
+
+.card .notice{
+	position: fixed;
+	left:50vw;
+	transform:translateX(-50%);
+	bottom:5vh;
+	width: fit-content;
+	padding: 0.5rem 1rem;
+	border-radius: 0.5rem;
+	background-color:#7ca954;
+	color: #ffffff;
+	font-size:1.5rem;
+	font-weight: bold;
+
+	transition: opacity 0.5s ease;
+}
+
+.card .fade{
+	opacity: 0;
+}
