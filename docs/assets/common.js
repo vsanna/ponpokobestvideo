@@ -96,6 +96,24 @@ function createCardComponent(title, thumbnailUrl, videoUrl) {
   const vidTitle = document.createElement("span");
   vidTitle.classList.add("title");
   vidTitle.textContent = title;
+  vidTitle.onclick = function(){
+    if(navigator.clipboard){
+      navigator.clipboard.writeText(title);
+
+      const notice = document.createElement("div");
+      notice.classList.add("notice");
+      notice.textContent="コピーしました！";
+
+      card.appendChild(notice);
+
+      setTimeout(()=>{
+        notice.classList.add("fade");
+        setTimeout(()=>{
+          notice.remove();
+        },500);
+      },500);
+    }
+  }
 
   card.appendChild(aTag);
   card.appendChild(vidTitle);
