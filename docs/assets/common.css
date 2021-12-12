@@ -65,13 +65,12 @@ a:not(.card) {
 	color: #252525;
 }
 
-.card.dummy {
-	border: none;
+.card:hover {
+    background: #f5f4fb;
 }
 
-.cards .card .img:hover {
-	transform: scale(1.05);
-	transition: all 0.4s;
+.card.dummy {
+	border: none;
 }
 
 @media(max-width: 720px) {
@@ -100,11 +99,32 @@ a:not(.card) {
 	width: calc(100% +24px);
 	margin-bottom: 12px;
 	padding-top: 75%;
+	position: relative;
+}
+.card .img:hover {
+	transform: scale(1.05);
+	transition: all 0.4s;
+}
+
+
+.card .img i.material-icons {
+    position: absolute;
+    right: 6px;
+    top: 6px;
+    color: #fff;
+	font-weight: bold;
 }
 
 .card .title{
 	cursor:pointer;
 }
+.card .title .material-icons {
+    font-size: 1rem;
+    padding-left: 4px;
+    position: relative;
+    top: 2px;
+}
+
 
 .card .notice{
 	position: fixed;
@@ -125,3 +145,4 @@ a:not(.card) {
 .card .fade{
 	opacity: 0;
 }
+

@@ -91,18 +91,29 @@ function createCardComponent(title, thumbnailUrl, videoUrl) {
   img.classList.add("img");
   img.style.background = `url(${thumbnailUrl}) center/cover`;
 
+  const videoLaunchIcon = document.createElement("i");
+  videoLaunchIcon.classList.add("material-icons");
+  videoLaunchIcon.textContent = "launch";
+  img.appendChild(videoLaunchIcon)
+
   aTag.appendChild(img);
 
   const vidTitle = document.createElement("span");
   vidTitle.classList.add("title");
   vidTitle.textContent = title;
+
+  const vidTitleClipboardIcon = document.createElement("i");
+  vidTitleClipboardIcon.classList.add("material-icons");
+  vidTitleClipboardIcon.textContent = "content_copy";
+
+  vidTitle.appendChild(vidTitleClipboardIcon);
   vidTitle.onclick = function(){
     if(navigator.clipboard){
       navigator.clipboard.writeText(title);
 
       const notice = document.createElement("div");
       notice.classList.add("notice");
-      notice.textContent="コピーしました！";
+      notice.textContent="タイトルをコピーしました！";
 
       card.appendChild(notice);
 
